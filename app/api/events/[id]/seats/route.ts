@@ -1,0 +1,1 @@
+import {seats} from "@/lib/store"; export async function GET(_:Request,{params}:{params:Promise<{id:string}>}){const {id}=await params;const url=new URL(_ .url);return Response.json({taken:seats(id,url.searchParams.get("showtime")||"7:45 PM")})}

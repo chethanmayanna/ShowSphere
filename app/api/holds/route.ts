@@ -1,0 +1,1 @@
+import {hold} from "@/lib/store"; export async function POST(request:Request){try{const body=await request.json();return Response.json(hold(body.eventId,body.showtime,body.seats))}catch(e){return Response.json({error:e instanceof Error?e.message:"Unable to hold seats"},{status:409})}}
