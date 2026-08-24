@@ -1,0 +1,1 @@
+import {confirm} from "@/lib/store"; export async function POST(request:Request){try{const b=await request.json();return Response.json(confirm(b.holdToken,b.eventId,b.showtime))}catch(e){return Response.json({error:e instanceof Error?e.message:"Payment failed"},{status:400})}}
